@@ -5,7 +5,7 @@ A event bus for Vue.js
 ```
 $ npm install vue-bus
 ```
-When used with a module system, you must explicitly install the router via Vue.use():
+When used with a module system, you must explicitly install the bus via Vue.use():
 ```
 import Vue from 'vue';
 import VueBus from 'vue-bus';
