@@ -1,0 +1,24 @@
+{
+  "name": "vue-bus",
+  "version": "0.1.0",
+  "description": "A event bus for Vue.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangmingshan/vue-bus.git"
+  },
+  "keywords": [
+    "vue",
+    "events",
+    "bus"
+  ],
+  "author": "Yang Mingshan <y.mingshan3@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yangmingshan/vue-bus/issues"
+  },
+  "homepage": "https://github.com/yangmingshan/vue-bus#readme"
+}
