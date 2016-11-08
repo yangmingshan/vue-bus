@@ -3,7 +3,7 @@ A event bus for Vue.js
 
 ## Installation
 ```
-$ npm install vue-resource
+$ npm install vue-bus
 ```
 When used with a module system, you must explicitly install the router via Vue.use():
 ```
