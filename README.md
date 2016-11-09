@@ -1,5 +1,5 @@
 # vue-bus
-A event bus for Vue.js
+A event bus for Vue.js, support both Vue 1.0 and 2.0. See Vue [documentation](http://vuejs.org/v2/guide/components.html#Non-Parent-Child-Communication) for more detail.
 
 ## Installation
 ```
