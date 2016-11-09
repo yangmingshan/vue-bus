@@ -15,23 +15,30 @@ Vue.use(VueBus);
 You don't need to do this when using global script tags.
 
 ## Usage
-#### Listen to an event
+#### Listen and clean
 ```
-new Vue({
-  created() {
-    this.$bus.on('event', data => console.log(data));
+// ...
+created() {
+  this.$bus.on('add-todo', this.addTodo);
+},
+beforeDestroy() {
+  this.$bus.off('add-todo', this.addTodo);
+},
+methods: {
+  addTodo(newTodo) {
+    this.todos.push(newTodo)
   }
-});
+}
 ```
-#### Trigger an event
+#### Trigger
 ```
-new Vue({
-  methods: {
-    test() {
-      this.$bus.emit('event', 'test');
-    }
+// ...
+methods: {
+  addTodo() {
+    this.$bus.emit('add-todo', { text: this.newTodoText });
+    this.newTodoText = '';
   }
-});
+}
 ```
 
 ## License

@@ -19,6 +19,11 @@
           return this.$on;
         }
       },
+      off: {
+        get: function() {
+          return this.$off;
+        }
+      },
       emit: {
         get: function() {
           return this.$emit;
