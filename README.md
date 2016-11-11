@@ -20,13 +20,14 @@ You don't need to do this when using global script tags.
 // ...
 created() {
   this.$bus.on('add-todo', this.addTodo);
+  this.$bus.once('once', () => console.log('This listener will only fire once'));
 },
 beforeDestroy() {
   this.$bus.off('add-todo', this.addTodo);
 },
 methods: {
   addTodo(newTodo) {
-    this.todos.push(newTodo)
+    this.todos.push(newTodo);
   }
 }
 ```
@@ -36,10 +37,12 @@ methods: {
 methods: {
   addTodo() {
     this.$bus.emit('add-todo', { text: this.newTodoText });
+    this.$bus.emit('once');
     this.newTodoText = '';
   }
 }
 ```
+*Note: `$bus.on` `$bus.once` `$bus.off` `$bus.emit` are aliases for `$bus.$on` `$bus.$once` `$bus.$off` `$bus.$emit`. See the [API](http://vuejs.org/v2/api/#Instance-Methods-Events) for more detail.*
 
 ## License
 [MIT](http://opensource.org/licenses/MIT)
