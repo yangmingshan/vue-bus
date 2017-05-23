@@ -1,5 +1,5 @@
 /**
- * vue-bus v0.1.0
+ * vue-bus v1.0.0
  * https://github.com/yangmingshan/vue-bus
  * @license MIT
  */
@@ -35,6 +35,8 @@
         }
       }
     });
+
+    Vue.bus = bus;
 
     Object.defineProperty(Vue.prototype, '$bus', {
       get: function() {

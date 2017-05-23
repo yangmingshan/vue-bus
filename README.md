@@ -1,9 +1,12 @@
-# vue-bus
-A event bus for Vue.js, support both Vue 1.0 and 2.0. See Vue [documentation](http://vuejs.org/v2/guide/migration.html#Events) for more detail.
+# vue-bus [![Build Status](https://img.shields.io/circleci/project/yangmingshan/vue-bus.svg)](https://circleci.com/gh/yangmingshan/vue-bus) [![Coverage Status](https://img.shields.io/codecov/c/github/yangmingshan/vue-bus.svg)](https://codecov.io/gh/yangmingshan/vue-bus) [![Downloads](https://img.shields.io/npm/dt/vue-bus.svg)](https://www.npmjs.com/package/vue-bus) [![Version](https://img.shields.io/npm/v/vue-bus.svg)](https://www.npmjs.com/package/vue-bus) [![License](https://img.shields.io/npm/l/vue-bus.svg)](https://www.npmjs.com/package/vue-bus)
+
+A event bus for Vue.js, support both Vue 1.0 and 2.0. See Vue [documentation](https://vuejs.org/v2/guide/migration.html#Events) for more detail.
 
 ## Installation
+You can install it via [yarn](https://yarnpkg.com) or [npm](https://npmjs.com).
 ```
-$ npm install vue-bus
+$ yarn add vue-bus
+$ npm install vue-bus --save
 ```
 When used with a module system, you must explicitly install the bus via Vue.use():
 ```
@@ -42,7 +45,14 @@ methods: {
   }
 }
 ```
-*Note: `$bus.on` `$bus.once` `$bus.off` `$bus.emit` are aliases for `$bus.$on` `$bus.$once` `$bus.$off` `$bus.$emit`. See the [API](http://vuejs.org/v2/api/#Instance-Methods-Events) for more detail.*
+#### Another way to use vue-bus
+```
+// xxx.js
+import Vue from 'vue';
+
+Vue.bus.emit('someEvent');
+```
+*Note: `on` `once` `off` `emit` are aliases for `$on` `$once` `$off` `$emit`. See the [API](https://vuejs.org/v2/api/#Instance-Methods-Events) for more detail.*
 
 ## License
-[MIT](http://opensource.org/licenses/MIT)
+[MIT](https://opensource.org/licenses/MIT)

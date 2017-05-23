@@ -1,10 +1,10 @@
 {
   "name": "vue-bus",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "A event bus for Vue.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest && codecov"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/yangmingshan/vue-bus/issues"
   },
-  "homepage": "https://github.com/yangmingshan/vue-bus#readme"
+  "homepage": "https://github.com/yangmingshan/vue-bus#readme",
+  "devDependencies": {
+    "codecov": "^2.2.0",
+    "jest": "^20.0.3",
+    "vue": "^2.3.3"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  }
 }
