@@ -1,7 +1,0 @@
-machine:
-  node:
-    version: 7
-
-test:
-  override:
-    - npm test -- -t $CI_CODECOV_TOKEN
