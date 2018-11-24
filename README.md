@@ -9,7 +9,7 @@ $ yarn add vue-bus
 $ npm install vue-bus --save
 ```
 When used with a module system, you must explicitly install the bus via Vue.use():
-```
+```js
 import Vue from 'vue';
 import VueBus from 'vue-bus';
 
@@ -19,7 +19,7 @@ You don't need to do this when using global script tags.
 
 ## Usage
 #### Listen and clean
-```
+```js
 // ...
 created() {
   this.$bus.on('add-todo', this.addTodo);
@@ -35,7 +35,7 @@ methods: {
 }
 ```
 #### Trigger
-```
+```js
 // ...
 methods: {
   addTodo() {
@@ -46,7 +46,7 @@ methods: {
 }
 ```
 #### Another way to use vue-bus
-```
+```js
 // xxx.js
 import Vue from 'vue';
 
