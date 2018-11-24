@@ -43,5 +43,6 @@
   "jest": {
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
-  }
+  },
+  "typings": "types/index.d.ts"
 }
