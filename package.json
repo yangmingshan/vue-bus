@@ -1,11 +1,19 @@
 {
   "name": "vue-bus",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A event bus for Vue.js",
   "main": "dist/vue-bus.common.js",
   "module": "dist/vue-bus.esm.js",
+  "unpkg": "dist/vue-bus.js",
+  "jsdelivr": "dist/vue-bus.js",
+  "typings": "types/index.d.ts",
+  "files": [
+    "src",
+    "dist/*.js",
+    "types/*.d.ts"
+  ],
   "scripts": {
-    "lint": "eslint src",
+    "lint": "eslint src __tests__",
     "build": "rimraf dist && rollup -c && uglifyjs dist/vue-bus.js -c -m --comments -o dist/vue-bus.min.js",
     "test": "jest && codecov"
   },
@@ -25,24 +33,23 @@
   },
   "homepage": "https://github.com/yangmingshan/vue-bus#readme",
   "devDependencies": {
-    "buble": "^0.18.0",
-    "codecov": "^3.0.0",
-    "eslint": "^4.16.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "jest": "^22.1.4",
-    "rimraf": "^2.6.2",
-    "rollup": "^0.55.0",
-    "rollup-plugin-buble": "^0.18.0",
-    "uglify-js": "^3.3.8",
-    "vue": "^2.5.13"
+    "buble": "^0.19.7",
+    "codecov": "^3.2.0",
+    "eslint": "^5.15.3",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^24.5.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.7.0",
+    "rollup-plugin-buble": "^0.19.6",
+    "uglify-js": "^3.5.1",
+    "vue": "^2.6.10"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
-  },
-  "typings": "types/index.d.ts"
+  }
 }

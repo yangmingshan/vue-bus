@@ -1,5 +1,5 @@
-/**
- * vue-bus v1.1.0
+/*!
+ * vue-bus v1.2.1
  * https://github.com/yangmingshan/vue-bus
  * @license MIT
  */
@@ -11,27 +11,31 @@ function VueBus(Vue) {
   Object.defineProperties(bus, {
     on: {
       get: function get() {
-        return this.$on
+        return this.$on.bind(this)
       }
     },
     once: {
       get: function get() {
-        return this.$once
+        return this.$once.bind(this)
       }
     },
     off: {
       get: function get() {
-        return this.$off
+        return this.$off.bind(this)
       }
     },
     emit: {
       get: function get() {
-        return this.$emit
+        return this.$emit.bind(this)
       }
     }
   });
 
-  Vue.bus = bus;
+  Object.defineProperty(Vue, 'bus', {
+    get: function get() {
+      return bus
+    }
+  });
 
   Object.defineProperty(Vue.prototype, '$bus', {
     get: function get() {

@@ -1,3 +1,4 @@
+/* global test expect */
 const Vue = require('vue')
 const VueBus = require('../dist/vue-bus.common')
 
@@ -9,12 +10,12 @@ test('Vue.bus', () => {
       return { count: 0 }
     },
     created() {
-      this.$bus.on('add', num => { this.count += num })
-      this.$bus.once('addOnce', num => { this.count += num })
+      Vue.bus.on('add', num => { this.count += num })
+      Vue.bus.once('addOnce', num => { this.count += num })
     },
     methods: {
       clean() {
-        this.$bus.off('add')
+        Vue.bus.off('add')
       }
     }
   })
@@ -87,4 +88,52 @@ test('this.$bus', () => {
 
   vm2.fireOnce()
   expect(vm1.count).toBe(3)
+})
+
+test('pass bus function as argument', () => {
+  const vm = new Vue({
+    data() {
+      return { count: 0 }
+    },
+    created() {
+      this.listen(this.$bus.on)
+      this.listenOnce(this.$bus.once)
+    },
+    methods: {
+      listen(on) {
+        on('add', num => { this.count += num })
+      },
+      listenOnce(once) {
+        once('addOnce', num => { this.count += num })
+      },
+      clean(off) {
+        off('add')
+      }
+    }
+  })
+
+  const obj = {
+    fire(emit) {
+      emit('add', 1)
+    },
+    fireOnce(emit) {
+      emit('addOnce', 1)
+    }
+  }
+
+  obj.fire(Vue.bus.emit)
+  expect(vm.count).toBe(1)
+
+  obj.fire(Vue.bus.emit)
+  expect(vm.count).toBe(2)
+
+  vm.clean(Vue.bus.off)
+  obj.fire(Vue.bus.emit)
+  expect(vm.count).toBe(2)
+
+  obj.fireOnce(Vue.bus.emit)
+  expect(vm.count).toBe(3)
+
+  obj.fireOnce(Vue.bus.emit)
+  expect(vm.count).toBe(3)
 })

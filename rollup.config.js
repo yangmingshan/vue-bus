@@ -1,7 +1,7 @@
 import { version } from './package.json'
 import buble from 'rollup-plugin-buble'
 
-const banner = `/**
+const banner = `/*!
  * vue-bus v${version}
  * https://github.com/yangmingshan/vue-bus
  * @license MIT
