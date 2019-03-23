@@ -8,6 +8,14 @@ You can install it via [yarn](https://yarnpkg.com) or [npm](https://npmjs.com).
 $ yarn add vue-bus
 $ npm install vue-bus --save
 ```
+And it's available on [jsdelivr](https://cdn.jsdelivr.net/npm/vue-bus/dist/vue-bus.js) or [unpkg](https://unpkg.com/vue-bus/dist/vue-bus.js).
+```html
+<!-- development version -->
+<script src="https://cdn.jsdelivr.net/npm/vue-bus/dist/vue-bus.js"></script>
+
+<!-- production version -->
+<script src="https://cdn.jsdelivr.net/npm/vue-bus/dist/vue-bus.min.js"></script>
+```
 When used with a module system, you must explicitly install the bus via Vue.use():
 ```js
 import Vue from 'vue';
