@@ -1,5 +1,5 @@
 import { version } from './package.json'
-import buble from 'rollup-plugin-buble'
+import buble from '@rollup/plugin-buble'
 
 const banner = `/*!
  * vue-bus v${version}
@@ -23,5 +23,5 @@ export default {
     name: 'VueBus',
     banner
   }],
-  plugins: [ buble() ]
+  plugins: [buble()]
 }
