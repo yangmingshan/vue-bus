@@ -41,7 +41,7 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^5.1.0",
-    "jest": "^26.1.0",
+    "jest": "^27.0.2",
     "rimraf": "^3.0.0",
     "rollup": "^2.0.6",
     "uglify-js": "^3.5.1",
